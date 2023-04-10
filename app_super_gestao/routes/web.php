@@ -13,14 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return "Hello World";
-});
+// Route::get('/', function () {
+//     return "Hello World";
+// });
 
-Route::get('/sobre-nos', function () {
-    return "Sobre-nós";
-});
+Route::get('/', 'PrincipalController@Principal');
 
-Route::get('/contato', function () {
-    return "contato";
+Route::get('/sobre-nos', 'SobreNosController@Principal');
+
+Route::get('/contato', 'ContatoController@Principal');
+
+Route::get('/contato/{nome}', function(string $nome){
+    echo 'Estamos aqui '.$nome;
 });
